@@ -1,0 +1,18 @@
+server:
+   port: 8767
+spring:
+   application:
+      name: zuul-token
+zuul:
+   routes:
+      api-a:
+         path: /api-a/**
+         serviceId: article-service
+      api-b:
+         path: /api-b/**
+         serviceId: hello-service
+   ignored-services: '*'
+eureka:
+   client:
+      serviceUrl:
+         defaultZone: http://localhost:8761/eureka/

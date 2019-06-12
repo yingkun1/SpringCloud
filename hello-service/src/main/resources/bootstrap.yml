@@ -1,0 +1,13 @@
+spring:
+   application:
+      name: hello-service
+   cloud:
+      config:
+         profile: pro #指定环境，用于匹配配置中心中具体的配置文件
+         label: master #指定分支，用于匹配配置文件
+         discovery:
+            enabled: true   #启用服务发现，不然需要写明config-server的endpoint
+            service-id: config-server   # 配置中心的服务名
+management:
+   security:
+      enabled: false
